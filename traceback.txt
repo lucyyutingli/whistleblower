@@ -1,60 +1,80 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'gui/main_menu.png'>:
-IOError: Couldn't find file 'gui/main_menu.png'.
+While loading <'Image' u'gui/button/choice_idle_background.png'>:
+  File "game/script.rpy", line 53, in script
+    menu:
+IOError: Couldn't find file 'gui/button/choice_idle_background.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "renpy/ast.py", line 928, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "renpy/ui.py", line 298, in interact
+  File "game/script.rpy", line 53, in script
+    menu:
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/ast.py", line 1688, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/exports.py", line 1062, in menu
+    rv = renpy.store.menu(new_items)
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/exports.py", line 1298, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3315, in interact
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/core.py", line 3315, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3834, in interact_core
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/core.py", line 3834, in interact_core
     self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2555, in draw_screen
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/core.py", line 2555, in draw_screen
     renpy.config.screen_height,
   File "render.pyx", line 492, in renpy.display.render.render_screen
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 824, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 824, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 824, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 824, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 824, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 824, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/screen.py", line 688, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/screen.py", line 688, in render
     child = renpy.display.render.render(self.child, w, h, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 824, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 824, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 623, in render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 1027, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/behavior.py", line 791, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/layout.py", line 1283, in render
+    back = render(style.background, bw, bh, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/imagelike.py", line 275, in render
+    crend = render(image, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/image.py", line 733, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/image.py", line 307, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/im.py", line 623, in render
     return cache.get(self, render=True)
-  File "renpy/display/im.py", line 287, in get
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/im.py", line 287, in get
     surf = image.load()
-  File "renpy/display/im.py", line 704, in load
+  File "C:\Users\yourl\Downloads\renpy-7.4.10-sdk/renpy/display/im.py", line 704, in load
     raise e
-IOError: Couldn't find file 'gui/main_menu.png'.
+IOError: Couldn't find file 'gui/button/choice_idle_background.png'.
 
-Windows-10-10.0.18362
+Windows-10-10.0.19041
 Ren'Py 7.4.10.2178
 WhistleBlower 1.0
-Mon Nov 29 19:21:57 2021
+Tue Nov 30 00:31:54 2021

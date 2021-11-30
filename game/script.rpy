@@ -3,16 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define a = Character("arreta", color="#0000ff")
+define a = Character("Arreta", color="#bb0000")
 define n = Character("non aretta", color="#c8ffc8")
 define s = Character("seth", color="#ffc8c8")
 
-define v1 = Character("???", color="#c8ffc8")
-define v2 = Character("???", color="#ffc8c8")
+define v1 = Character("Woman", color="#f587f5")
+define v2 = Character("Man", color="#8591ff")
 
 define narrator = Character(what_italic=True)
 
-define am = Character("arreta", what_italic=True, color="#ffcccc")
+define am = Character("Arreta", what_italic=True, color="#bb0000")
 
 
 
@@ -31,29 +31,28 @@ label start:
 
     narrator "Arreta gets up from her desk and starts walking to the next room. She pays particular attention to the sound of her shoes hitting the floor. She arrives at the printer and starts picking up papers."
 
-    a "It gets so quiet here in the evening. Well, I ought to be heading out soon too."
+    a "It gets so quiet here in the evening. Seems like no one's here, I ought to be heading out soon too."
 
-    narrator "A door opens down one of the halls from the printer room accompanied with the sound of several footsteps.
-    Arreta hears a voice, but it is very muffled"
+    narrator "A door opens down the hall from the printer room. Arreta suddenly hears a man and woman talking, and tries to figure out what they're saying..."
 
-    v1 "I really think we should go through with it anyways, Seth. It’s not like we’re the first ones being asked to do this kind of thing. The payment is incredibly… generous, as well."
+    v1 "I really think we should go through with it anyways, Seth. It’s not like we’re the first ones being asked to do this kind of thing. The payment is incredibly generous, we can't turn this kind of thing down."
 
-    v2 "I agree with what you’re saying, of course, but not everyone is on the same page. It’s so frustrating…"
+    v2 "I agree with what you’re saying, of course, but not everyone is on the same page. It’s so frustrating."
 
-    narrator "Arreta strains to make out what the two figures are discussing"
+    narrator "Arreta leans in closer, intrigued by the conversation"
 
-    v2 "Huh, I can’t find my keycard on me anywhere. Did you grab it when we were leaving?"
+    v2 "Huh, I can’t find my keycard on me anywhere. Did you grab it when we were leaving the car?"
 
     v1 "Don’t look at me! You can't expect me to pick up after you all the time. This is the same thing that happened at the last office party."
 
-    v2 "Yeah, it was July 20! My birthday. Can’t you cut a guy a break for being a bit absent-minded at his own birthday par– . You know what, let’s just check in my car for the card. Then we can discuss the project more in detail in my office, away from prying ears."
+    v2 "Yeah, it was July 20, my birthday party. You think you could cut a guy some slack... You know what, let’s just go back to the car for my keycard. Then we can discuss the project more in detail in my office."
 
-    narrator "The two figures exit from the room"
+    narrator "The two figures exit from the hall"
 
 
     menu:
 
-        a "That sounded like Seth, my boss, and someone else talking about… something suspicious, that’s for sure. Maybe I should investigate further?"
+        a "That sounded like my boss Seth and someone else talking about something suspicious, to say the least. Should I investigate further?"
 
         "Yes":
             jump choice1_yes
@@ -65,7 +64,7 @@ label start:
 
         $ investigate_choice_flag = True
 
-        a "Yeah I should just circle by Seth’s office, and possibly ask a few questions."
+        a "Yeah I'll just circle by Seth’s office and possibly ask a few questions."
 
         jump choice1_done
 
@@ -73,9 +72,9 @@ label start:
 
         $ investigate_choice_flag = False
 
-        a "Well, maybe this doesn’t concern me at all. I should just head home."
+        a "Probably something that doesn't concern me. I should just head home."
 
-        narrator "Arreta went back to her car and drove home. She stayed up late into the night wondering what the two figures could have possibly been talking about. But by the following morning, it was no longer on her mind."
+        narrator "Arreta goes back to her car and drives home. She stays up late into the night wondering what the two figures could have possibly been talking about. By the following morning, it was no longer on her mind."
 
         jump choice1_done
 
@@ -97,28 +96,28 @@ label start:
 
     label office:
 
-        play music "audio/noir.mp3" fadeout 1
         scene bg office
+        with fade
+        play music "audio/noir.mp3" fadeout 1
 
-        a "Wait what am I doing? Is it really logical to be snooping around your bosses office at night? What if he found me? What would I say?"
+        a "Maybe this was a bad idea, is it really logical to be snooping around your bosses office at night!? What if he found me? What would I say?"
 
-        narrator "Arreta turns to leave, but before she can even step towards the door, she hears the loud sound of approaching footsteps"
+        narrator "Arreta turns to leave, but before she can even step towards the door, she hears the sound of approaching footsteps"
 
-        v1 "Do you have any snacks in your office? I'm starving"
+        v1 "Do you have any snacks in your office? I'm starving."
 
-        v2 "When have you ever seen me eating snacks in my office? You’ve been in here hundreds of times."
+        v2 "You’ve been in here hundreds of times, when have you ever seen me eating snacks in my office? We'll get dinner afterwards anyways."
 
-        narrator "Arretta’s mind races."
+        # narrator "Arretta’s mind races"
 
 
-        stop music fadeout 1
 
-        am "What do I do? Should I hide? Make some excuse? Agghhhh"
-        narrator "Despite the flurry of cluttered options present in her mind, her body only considers one."
+        am "What do I do? Should I hide? Should I run? God damn it, why did I get myself into this mess!"
+        narrator "Despite the flurry of cluttered options present in her mind, her body only considers one and she decides to hide."
 
 
         menu:
-            narrator "she hides..."
+            narrator "She hides..."
 
             "Behind the Fireplace":
                 jump choice_fireplace
@@ -149,9 +148,10 @@ label start:
 
 
         label hide_choice_done:
+            stop music fadeout 0.8
 
             scene bg black
-            play sound "audio/dooropen.mp3"
+            play sound "audio/dooropen.mp3" volume 0.7
             narrator "the door opens..."
 
 
